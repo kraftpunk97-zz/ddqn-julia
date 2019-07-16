@@ -1,0 +1,9 @@
+[deps]
+CuArrays = "3a865a2d-5b23-5a0f-bc46-62713ec82fae"
+DataStructures = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
+Flux = "587475ba-b771-5e3f-ad9e-33799f191a9c"
+Gym = "56b9baea-2481-11e9-37ae-75904354ad8c"
+GymSpaces = "4896a6fa-884d-11e9-35a0-9763e69c01ff"
+Images = "916415d5-f1e6-5110-898d-aaa5f9f070e0"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
