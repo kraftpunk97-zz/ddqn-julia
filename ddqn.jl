@@ -255,9 +255,11 @@ function mainloop(num_episodes)
     close(io)
 end
 
+#=
 reset!(env); init!(); episode!(); episode!(); episode!();
 
 for ctr=1:7
     total_reward, loss = episode!()
     println(ctr , loss)
 end
+=#
