@@ -112,8 +112,7 @@ const UPDATE_TIME = 1000
 const MEMORY_SIZE = 100000
 
 # RMSProp parameters
-const η = 25f-5
-const ρ = 99f-2
+const η = 0.0001f0
 
 current_state = Array{Float32, 4}(undef, 84, 84, 4, 1)
 memory = MemoryArray(MEMORY_SIZE)
@@ -227,7 +226,6 @@ function trainnetwork!()
 end
 
 function mainloop(num_episodes)
-
     io = io = open("log.txt", "w+")
     logger = SimpleLogger(io)
     global_logger(logger)
@@ -257,4 +255,9 @@ function mainloop(num_episodes)
     close(io)
 end
 
-#mainloop(60)
+reset!(env); init!(); episode!(); episode!(); episode!();
+
+for ctr=1:7
+    total_reward, loss = episode!()
+    println(ctr , loss)
+end
