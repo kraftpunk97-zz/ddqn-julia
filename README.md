@@ -4,7 +4,7 @@ To be honest, this doesn't work yet. But I'm trying to make that happen.
 
 To train run `julia main2.jl`
 
-**UPDATE** - Ok, so this still doesn't work, but it doesn't **not** work as much as
+**UPDATE** - Ok, so this still doesn't work, but it doesn't \***not**\* work as much as
 it used to. The model seems to learn for upto 20-30 episodes and you can see it go
 from scoring -21 to then -20 and -19, and even -18 if you're really lucky. But then it,
 just forgets everything it has learned and you see mile long streaks of -21 rewards.
