@@ -2,6 +2,8 @@
 
 To be honest, this doesn't work yet. But I'm trying to make that happen.
 
+Trying it out on `Pong-greyNoFrameskip-v4`, which is just a greyscale version of `PongNoFrameskip-v4`.
+
 To train run `julia main2.jl`
 
 **UPDATE** - Ok, so this still doesn't work, but it doesn't \***not**\* work as much as
