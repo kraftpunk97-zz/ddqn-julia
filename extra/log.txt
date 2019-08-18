@@ -1,0 +1,300 @@
+┌ Info: Starting training for 80...
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:61
+┌ Info: episode 1: Loss = 0  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: episode 2: Loss = 0  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: episode 3: Loss = 0  |  Reward = -18.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: episode 4: Loss = 0  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: episode 5: Loss = 0  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: episode 6: Loss = 0  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: episode 7: Loss = 0  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: episode 8: Loss = 0  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: episode 9: Loss = 0  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: episode 10: Loss = 0  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: episode 11: Loss = 0  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 12: Loss = 952.02515  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 13: Loss = 896.8674  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 14: Loss = 984.8273  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 15: Loss = 1125.7268  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 16: Loss = 944.71875  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 17: Loss = 879.6002  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 18: Loss = 1083.8829  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 19: Loss = 922.47754  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 20: Loss = 824.52466  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_episode #20.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 21: Loss = 881.7102  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 22: Loss = 766.16583  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 23: Loss = 566.4154  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 24: Loss = 594.13196  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 25: Loss = 572.1854  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: episode 26: Loss = 688.3004  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 27: Loss = 792.37555  |  Reward = -19.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: episode 28: Loss = 589.4279  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 29: Loss = 892.6311  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 30: Loss = 622.32916  |  Reward = -19.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 31: Loss = 529.47925  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 32: Loss = 810.21173  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 33: Loss = 746.35675  |  Reward = -19.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 34: Loss = 822.64905  |  Reward = -18.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 35: Loss = 648.4525  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 36: Loss = 536.2602  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 37: Loss = 731.5114  |  Reward = -18.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 38: Loss = 681.2123  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 39: Loss = 593.57214  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 40: Loss = 754.05005  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_episode #40.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 41: Loss = 645.1434  |  Reward = -19.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 42: Loss = 1002.8738  |  Reward = -19.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 43: Loss = 776.7185  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 44: Loss = 678.076  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 45: Loss = 560.363  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 46: Loss = 532.4846  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 47: Loss = 660.86444  |  Reward = -19.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: episode 48: Loss = 645.1492  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 49: Loss = 659.4819  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 50: Loss = 461.86487  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 51: Loss = 626.913  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 52: Loss = 571.71295  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 53: Loss = 507.1514  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 54: Loss = 692.04767  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 55: Loss = 731.48846  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 56: Loss = 623.7783  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 57: Loss = 504.79645  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 58: Loss = 631.79425  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 59: Loss = 708.9847  |  Reward = -19.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 60: Loss = 717.8352  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_episode #60.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 61: Loss = 666.36993  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 62: Loss = 510.97507  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 63: Loss = 637.2505  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 64: Loss = 430.0456  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 65: Loss = 705.15906  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: episode 66: Loss = 517.21387  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 67: Loss = 510.52908  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 68: Loss = 473.88007  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 69: Loss = 657.8276  |  Reward = -19.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 70: Loss = 601.5485  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 71: Loss = 699.1918  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 72: Loss = 626.75226  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 73: Loss = 571.84973  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 74: Loss = 517.4948  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 75: Loss = 782.7746  |  Reward = -19.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: episode 76: Loss = 438.5572  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 77: Loss = 405.04367  |  Reward = -21.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 78: Loss = 543.8329  |  Reward = -20.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 79: Loss = 660.8493  |  Reward = -19.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: episode 80: Loss = 966.2178  |  Reward = -19.0
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:66
+┌ Info: Model saved: duel_dqn_episode #80.bson
+└ @ Main /home/kraftpunk97/ddqn-julia/utils.jl:8
+┌ Info: Training ended successfully after 80
+└ @ Main /home/kraftpunk97/ddqn-julia/main2.jl:79

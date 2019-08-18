@@ -1,5 +1,5 @@
 # Uncomment the following line if you have access to a GPU
-#using CuArrays
+using CuArrays
 using Gym
 using Logging
 
