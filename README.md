@@ -3,6 +3,9 @@
 To be honest, this doesn't work yet. But I'm trying to make that happen.
 
 Trying it out on `Pong-greyNoFrameskip-v4`, which is just a greyscale version of `PongNoFrameskip-v4`.
+I should also let you know that unlike the DeepMind paper, in which a state comprises of a stack of the 
+4 latest frames, my implementation uses only 1 frame, which is every 4th frame. It gave me similar results 
+and sped up training so I decided to stick with it.
 
 To train run `julia main2.jl`
 
