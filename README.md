@@ -22,3 +22,5 @@ never say never...
 The Hyperparameter case is also tricky. Almost all implementations use similar hyperparameters
 with the only differences in `η` used in ADAM optimizer, `γ` and the way `ϵ` is calculated.
 Those metrics are also very similar.
+
+I have included the results of a test run of 80 episodes in the `extra` folder.
