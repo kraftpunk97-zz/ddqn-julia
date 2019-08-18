@@ -4,7 +4,7 @@ using Gadfly
 function save_model(model, info)
     wts = cpu.(Tracker.data(params(model)))
 
-    @save "duel_dqn_$info.bson" wts
+    @save "ddqn_$info.bson" wts
     @info("Model saved: duel_dqn_$info.bson")
 end
 
