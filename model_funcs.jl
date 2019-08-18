@@ -21,7 +21,7 @@ function mse_loss(x, y)
     return sum(diff .* diff)/length(diff)
 end
 
-
+# Why we used huber loss - https://github.com/devsisters/DQN-tensorflow/issues/16
 function huber_loss(x, y)
     diff = x .- y
     return sum(sqrt.(1 .+ diff .* diff) .- 1)/length(diff)
@@ -29,6 +29,7 @@ end
 
 # Vectorizing the TD target calculation step.
 function calculate_target_Q(reward_batch, terminal_batch, next_state_batch)
+    # Why use `Flux.onecold(cpu(...))` - https://github.com/JuliaGPU/CuArrays.jl/issues/304
     training_model_actions = Flux.onecold(cpu(training_model(next_state_batch)))
     target_model_values = target_model(next_state_batch)[CartesianIndex.(training_model_actions, eachindex(training_model_actions))]
     reward_batch .+ γ .* target_model_values .* (1 .- terminal_batch)
