@@ -29,6 +29,8 @@ end
 function getaction!(state)
     # Following ϵ-greedy policy, we see if a randomly generated number is greater
     # than ϵ. If greater, we act greedily. Otherwise, we pick a random action.
+    # If wondering why we use offload the model from the GPU when using `Flux.onecold`,
+    # refer to https://github.com/JuliaGPU/CuArrays.jl/issues/304
     ϵ = get_ϵ()
     return rand(Float32) ≤ ϵ ? rand(1:ACTION_SIZE) : Flux.onecold(cpu(training_model(state |> gpu)))[1]
 end
