@@ -8,23 +8,23 @@ using Logging
 using Gadfly
 # ------------------------ Load game environment -------------------------------
 env = nothing
-# This is something we do to make it run on headless servers. This is black magic and
-# we don't talk about it...
+# This is something we do to make it run on headless servers.
+# Best not talk about it...
 try
     global env
-    env = make("Pong-greyNoFrameskip-v0")
+    env = make("Pong-greyNoFrameskip-v4")
 catch
     global env
-    env = make("Pong-greyNoFrameskip-v0")
+    env = make("Pong-greyNoFrameskip-v4")
 end
 
 #-------------------------Some utis-––––---------------------------------------
 
 mutable struct MemoryArray
-    current_state_arr
+    current_state_arr::Array{Float32, 4}
     action_arr
-    reward_arr
-    next_state_arr
+    reward_arr::Array{Float32, 1}
+    next_state_arr::Array{Float32, 4}
     terminal_arr
     size::Int64
     current_ptr::Int64
@@ -45,7 +45,7 @@ function push!(memarr::MemoryArray, current_state, action, reward, next_state, t
     idx = memarr.current_ptr
     memarr.current_state_arr[:, :, :, idx] .= current_state[:, :, :, 1]
     memarr.next_state_arr[:, :, :, idx]    .= next_state[:, :, :, 1]
-    memarr.action_arr[idx]   = Int(action)
+    memarr.action_arr[idx]   = action
     memarr.reward_arr[idx]   = reward
     memarr.terminal_arr[idx] = terminal
     memarr.current_ptr  += 1
@@ -76,11 +76,11 @@ function sample(memarr::MemoryArray, batch_size::Integer)
             terminal_batch
 end
 
-function save_model(model, episode)
+function save_model(model, info)
     wts = cpu.(Tracker.data(params(model)))
 
-    @save "duel_dqn_$episode" wts
-    @info("Model saved")
+    @save "duel_dqn_$info.bson" wts
+    @info("Model saved: duel_dqn_$info.bson")
 end
 
 function plot_losses(losses)
@@ -99,19 +99,20 @@ end
 # ---------------------------- Parameters --------------------------------------
 const ACTION_SIZE = length(env.action_space)
 const FRAMESKIP = 1
-const γ = 0.95f0 # Discount
+const γ = 0.98f0 # Discount
 
 
-const FINAL_ϵ = 1f-1
+const FINAL_ϵ = 2f-2
 const INITIAL_ϵ = 1f0
-const OBSERVE = 10000
 const EXPLORE = 100000
+const OBSERVE = 10000
+
 const BATCH_SIZE = 32
 const UPDATE_TIME = 1000
 
 const MEMORY_SIZE = 100000
 
-# RMSProp parameters
+# ADAM parameters
 const η = 0.0001f0
 
 current_state = Array{Float32, 4}(undef, 84, 84, 4, 1)
@@ -134,14 +135,18 @@ target_model = deepcopy(training_model) |> gpu
 # gets us into trouble during the gradient step...
 function mse_loss(x, y)
     diff = x .- y
-    return sqrt(sum(diff .* diff)/length(diff))
+    return sum(diff .* diff)/length(diff)
 end
 
 
 opt = Optimise.ADAM(η)
 
 # Vectorize that shit, bro...
-@inline calculate_target_Q(reward_batch, terminal_batch, state_batch) = reward_batch .+ γ .* Flux.maximum(target_model(state_batch), dims=1)'[:, 1] .* (1 .- terminal_batch)
+function calculate_target_Q(reward_batch, terminal_batch, next_state_batch)
+    training_model_actions = Flux.onecold(cpu(training_model(next_state_batch)))
+    target_model_values = target_model(next_state_batch)[CartesianIndex.(training_model_actions, eachindex(training_model_actions))]
+    reward_batch .+ γ .* target_model_values .* (1 .- terminal_batch)
+end
 # ------------------------- Helper functions -----------------------------------
 
 function preprocess(observation)
@@ -154,18 +159,18 @@ function preprocess(observation)
 end
 
 function update_ϵ!()
-    global ϵ, INITIAL_ϵ, FINAL_ϵ, OBSERVE, EXPLORE
-    ϵ > FINAL_ϵ && env.total_steps > OBSERVE &&
-        (ϵ -= (INITIAL_ϵ - FINAL_ϵ)/EXPLORE)
+    global ϵ
+    if ϵ > FINAL_ϵ && env.total_steps > OBSERVE
+        ϵ -= (INITIAL_ϵ - FINAL_ϵ)/EXPLORE
+    end
 end
 
 function getaction!(state)
     # We take action after some frames to simulate human reaction time.
     # Following ϵ-greedy policy, we see if a randomly generated number is greater
     # than ϵ. If greater, we act greedily. Otherwise, we pick a random action.
-    global FRAMESKIP
     update_ϵ!()
-    return env.total_steps % FRAMESKIP == 0 ? rand(Float32) ≤ ϵ ? rand(1:ACTION_SIZE) : Flux.onecold(training_model(state |> gpu))[1] : 1
+    return env.total_steps % FRAMESKIP == 0 ? rand(Float32) ≤ ϵ ? rand(1:ACTION_SIZE) : Flux.onecold(cpu(training_model(state |> gpu)))[1] : 1
 end
 
 function init!()
@@ -175,7 +180,7 @@ function init!()
     return
 end
 
-function episode!()
+function episode!(env; debug=false)
     global current_state
     reset!(env)
     loss = 0f0
@@ -187,8 +192,9 @@ function episode!()
         # Push the data objects into memory for exp replay...
         push!(memory, current_state, action, reward, new_state, terminal)
 
-        if env.total_steps > OBSERVE
-            #@info("Time to train...")
+        # First we populate the memory with experiences, then we sample from
+        # those experiences to train our model...
+        if env.total_steps > OBSERVE && !debug
             loss += trainnetwork!()
         end
         current_state .= new_state
@@ -197,8 +203,6 @@ function episode!()
 end
 
 function trainnetwork!()
-    global UPDATE_TIME, BATCH_SIZE, γ, UPDATE_TIME, target_model, training_model
-
     current_state_batch, action_batch, reward_batch, next_state_batch, terminal_batch = sample(memory, BATCH_SIZE) |> gpu
 
     # Calculate the target network's Q values...
@@ -222,11 +226,17 @@ function trainnetwork!()
     # Makes us stronger
     Flux.Optimise.update!(opt, params(training_model), grads)
 
+    # Fitted Q Iteration and saving model...
+    if env.total_steps % UPDATE_TIME == 0
+        target_model = deepcopy(training_model)
+        save_model(training_model, "")
+    end
+
     return loss.data
 end
 
 function mainloop(num_episodes)
-    io = io = open("log.txt", "w+")
+    io = open("log.txt", "w+")
     logger = SimpleLogger(io)
     global_logger(logger)
 
@@ -234,18 +244,21 @@ function mainloop(num_episodes)
     rewards = Float32[]
     reset!(env);
     init!()
-    for ctr=1:num_episodes
-        reward, loss = episode!()
 
-        @info("Loss after this episode $ctr = $loss")
-        println("Loss after this episode $ctr = $loss")
+    @info("Starting training for $num_episodes...")
+    println("Starting training for $num_episodes...")
+    for ctr=1:num_episodes
+        reward, loss = episode!(env)
+
+        @info("episode $ctr: Loss = $loss  |  Reward = $reward")
+        println("episode $ctr: Loss = $loss  |  Reward = $reward")
         Base.push!(rewards, reward)
         Base.push!(losses, loss)
-        # Fitted Q Iteration and saving model...
-        if env.total_steps % UPDATE_TIME == 0
-            save_model(training_model, ctr)
-            target_model = deepcopy(training_model)
+
+        if ctr % 20 == 0
+            save_model(training_model, "episode #$ctr")
         end
+
         plot_losses(losses)
         plot_rewards(rewards)
         flush(io)
@@ -255,11 +268,24 @@ function mainloop(num_episodes)
     close(io)
 end
 
-#=
-reset!(env); init!(); episode!(); episode!(); episode!();
+mainloop(50)
 
-for ctr=1:7
-    total_reward, loss = episode!()
-    println(ctr , loss)
+#=
+function dummy()
+    reset!(env); init!();
+    episode!(env, debug=true);
+    episode!(env; debug=true);
+    episode!(env; debug=true);
+
+    #=
+    for ctr=1:7
+        total_reward, loss = episode!(env)
+        println("$ctr : $loss & $total_reward")
+
+    end=#
 end
+dummy()
 =#
+
+#A = [ -1.6111217f0, 0.36582416f0, -0.38699928f0, 1.5262374f0, 0.9370651f0,-1.1155703f0]
+#A = reshape(cu(A), length(A), 1)
