@@ -29,3 +29,8 @@ with the only differences in `η` used in ADAM optimizer, `γ` and the way `ϵ` 
 Those metrics are also very similar.
 
 I have included the results of a test run of 80 episodes in the `extra` folder.
+
+Everything is ok, if you always have a Plan B up your sleeve, incase Plan A doesn't pan out. So here's
+my Plan B... I will take my understanding of the working of DDQN algorithm, and reimplement it in PyTorch.
+If I still get similar results, well then, I'll have to take closer look at my agent code. If not, then I will take a closer
+look at my enviroment code and investigate if the problem lies with Flux.
